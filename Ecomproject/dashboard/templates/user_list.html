@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Les utilisateurs{% endblock  %}
+
+{% block content %}
+<br><br>
+<div class="container">
+
+<table class="table table-hover" border="1">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Image</th>
+      <th scope="col">Opérations</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for profil in profils  %}
+    
+    {% if profil.is_costumer %}
+      <tr>
+        <th scope="row">{{profil.id}}</th>
+        <td>{{profil.user.username}}</td>
+        <td>{{profil.user.last_name}}</td>
+        <td>{{profil.user.first_name}}</td>
+        <td>{{profil.user.email}}</td>
+        <td>
+              <img src="{{profil.image.url}}" class="img-fluid" width="50%" height="50%"></td>
+        <td>
+                
+                <a href="{% url 'userDelete' profil.id%}">supprimer</a>
+                
+        </td>
+       
+      </tr>
+    {% endif %}
+   {% endfor %} 
+  </tbody>
+</table>
+</div>
+{% endblock  %}

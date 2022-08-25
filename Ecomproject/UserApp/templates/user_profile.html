@@ -1,0 +1,127 @@
+  {% extends 'index.html'%}
+
+  {% load static%}
+
+
+
+  {% block title %}
+   Profile
+
+  {% endblock title %}
+
+
+
+  
+
+
+
+  {% block header %}
+  {% include "header.html" %}
+  {% endblock header %}
+
+
+{% block another_content %}
+
+
+   <div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li class="active">Profile</li>
+                        </ul>
+                    </div>
+                     
+                </div>
+            </div>
+            <br>
+
+
+
+  <div class="section">
+      <div class="container">
+         {% if messages %}
+
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}" role="alert">
+              {{message}}
+          </div>
+          {% endfor %}
+          {% endif %}
+          <!--start from here-->
+          <div class="page-section mb-60">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-sm-12 col-md-12 col-xs-12 col-lg-3 mb-30">
+                          <h1>User Panel</h1>
+                           <div class="aside">
+                            <ul class="list-links">
+                                <li><a href="{% url 'userprofile'%}">User Profile</a></li>
+                                
+                                <li><a href="{% url 'user_logout'%}">Logout</a></li>
+                            </ul>
+                        </div>
+
+                      </div>
+                       
+                      <div class="col-sm-12 col-md-12 col-lg-9 col-xs-12">
+                          <h1>User Details</h1>
+                          <table class="shopping-cart-table table">
+                              <tr>
+                                  <th class="text-left">
+                                      <a href="{% url 'user_update' %}" class="primary-btn">Update Profile</a>
+                                       &nbsp; &nbsp; &nbsp;
+                                      <a href="{% url 'user_password'%}" class="primary-btn">Change Password</a>
+                                  </th>
+                                  <td><img src="{{ profile.imageUrl}}"
+                                          style="border-radius:10px; height: 100px;width:100px; ">
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th class="text-left">Name :</th>
+                                  <td class="text-left">{{ user.username}} {{ user.last_name}} </td>
+                              </tr>
+                              <tr>
+                                  <th class="text-left">Email</th>
+                                  <td class="text-left">{{ profile.user.email}}</td>
+                              </tr>
+                              <tr>
+                                  <th class="text-left">Phone</th>
+                                  <td class="text-left">{{ profile.phone}}</td>
+                              </tr>
+                              <tr>
+                                  <th class="text-left">Address</th>
+                                  <td class="text-left">{{ profile.address}}</td>
+                              </tr>
+                              <tr>
+                                  <th class="text-left">City</th>
+                                  <td class="text-left">{{ profile.city}}</td>
+                              </tr>
+                              <tr>
+                                  <th class="text-left">Country</th>
+                                  <td class="text-left">{{ profile.country}}</td>
+                              </tr>
+
+                          </table>
+                      </div>
+                  </div>
+
+                  <!--end from here-->
+
+              </div>
+          </div>
+          <br>
+    </div>
+
+
+
+ {% endblock  %}
+
+
+
+
+{% block footer %}
+
+ {% include "footer.html" %}
+
+ {% endblock footer %}

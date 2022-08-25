@@ -1,0 +1,108 @@
+
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+            {% block title %}
+            Shopping Cart
+               
+
+            {% endblock %}
+
+
+           
+
+            {% block header %}
+
+                {% include 'header.html' %}
+
+            {% endblock %}
+
+{% block  another_content%} 
+
+
+<!-- Header Area End Here -->
+            <!-- Begin Li's Breadcrumb Area -->
+            <div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li class="active">Shopping Cart</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <br>
+                        {% if messages %} {% for message in messages %}
+                         <div class="alert alert-{{ message.tags }}" role="alert">
+                         {{message}}
+                         </div>
+                         {% endfor %} {% endif %}
+                     </div>
+                </div>
+            </div>
+            <!-- Li's Breadcrumb Area End Here -->
+            <!--Shopping Cart Area Strat-->
+            <div class="Shopping-cart-area pt-60 pb-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="#">
+                                <div class="table-content table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="li-product-remove">remove</th>
+                                                <th class="li-product-thumbnail">images</th>
+                                                <th class="cart-product-name">Product</th>
+                                                <th class="li-product-price">Unit Price</th>
+                                                <th class="li-product-quantity">Quantity</th>
+                                                <th class="li-product-subtotal">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           {% for p in  cart_products %}
+                                            <tr>
+                                                <td class="li-product-remove"><a href="{% url 'cart_delete' id=p.id%}"><i class="fa fa-times"></i></a></td>
+                                                <td class="li-product-thumbnail"><a href="#"><img src="{{p.product.ImageUrl}}" style="width: 150px; height: 150px" alt="Li's Product Image"></a></td>
+                                                <td class="li-product-name"><a href="#">{{p.product.title}}</a></td>
+                                                <td class="li-product-price"><span class="amount">{{p.price}} DH</span></td>
+                                                <td class="quantity"><span>{{p.quantity}}</span><br><br><br>
+                                                   
+                                                 <strong><a  href="{% url 'cart_update' idp=p.id%}"> Modifier </a></strong>
+                                                </td>
+                                                <td class="product-subtotal"><span class="amount">{{p.amount}} DH</span></td>
+                                            </tr>
+                                            {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                               
+                                <div class="row">
+                                    <div class="col-md-5 ml-auto">
+                                        <div class="cart-page-total">
+                                            <h2>Cart totals</h2>
+                                            <ul>
+                                                
+                                                <li>Total <span>{{total}} DH</span></li>
+                                            </ul>
+                                            <a href="{% url 'OrderCart'%}">Proceed to checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Shopping Cart Area End-->
+
+
+{% endblock %}
+
+            {% block footer %}
+
+                {% include 'footer.html' %}
+
+            {% endblock %}

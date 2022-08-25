@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Les produits{% endblock  %}
+{% block content %}
+<div class="container">
+<br><br>
+<a href="{% url 'productCreate' %}" >Nouveau Produit</a>
+<br>
+<br>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover" border="1">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
+            <th scope="col">Detail</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Image</th>                             
+            <th scope="col">Catégorie</th>
+            <th scope="col">Opérations</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+          <tr>
+            <th scope="row">{{product.id}}</th>
+            <td>{{product.title}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.detail}}</td>
+            <td>{{product.new_price}}</td>
+            <td>{{product.amount}}</td>
+            <td>
+            <img src="{{product.image.url}}" class="img-fluid" ></td>
+            <td>{{product.category.title}}
+            
+            </td>
+            <td>
+               <a href="{% url 'productUpdate' product.id%}">Editer
+               <a href="{% url 'productDelete' product.id%}">supprimer</a>
+              
+            </td>
+          </tr>
+        {% endfor %} 
+        </tbody>
+      </table>
+</div>
+</div>
+</div>
+{% endblock  %}

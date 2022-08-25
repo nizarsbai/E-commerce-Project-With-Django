@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Les Messages{% endblock  %}
+
+{% block content %}
+<div class="container">
+
+<br>
+<br>
+<table class="table table-hover" border="1">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Message</th>
+      <th scope="col">Statut</th>
+      <th scope="col">Note</th>
+      <th scope="col">Opérations</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for message in messages %}
+    <tr>
+      <th scope="row">{{message.id}}</th>
+      <td>{{message.email}}</td>
+      <td>{{message.subject}}</td>
+      <td>{{message.message}}</td>
+      <td>{{message.status}}</td>
+      <td>{{message.Note}}</td>
+      
+      <td>
+               <a href="{% url 'messageUpdate' message.id %}">Editer</a><br>
+               <a href="{% url 'messageDelete' message.id %}">Supprimer</a><br>
+               
+              
+       </td>
+    </tr>
+   {% endfor %} 
+  </tbody>
+</table>
+</div>
+{% endblock  %}

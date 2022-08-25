@@ -1,0 +1,128 @@
+{% extends 'index.html'%}
+{% load static%}
+{% load crispy_forms_tags %}
+
+    {% block title %}
+       FAQ
+                
+     {% endblock title %}
+
+
+
+    
+
+
+
+            {% block header %}
+                {% include "header.html" %}
+            {% endblock header %}
+
+
+             {% block another_content %}
+ <div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="{% url 'home'%}">Home</a></li>
+                            <li class="active">FAQ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Li's Breadcrumb Area End Here -->
+            <!-- Begin Frequently Area -->
+            <div class="frequently-area pt-60 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="frequently-content">
+                                <div class="frequently-desc">
+                                    <h3>Below are frequently asked questions, you may find the answer for yourself</h3>
+                                    
+                                </div>
+                            </div>
+                            <!-- Begin Frequently Accordin -->
+                            <div class="frequently-accordion">
+                                <div id="accordion">
+                                   
+                              
+                                  <div class="card">
+                                    <div class="card-header" id="heading1">
+                                      <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse{{p.ordernumber}}">
+                                        What Shipping Options we offer?
+
+
+                                        </a>
+                                      </h5>
+                                    </div>
+                                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+                                      <div class="card-body">
+                                    Domestic: We offer Standard Shipping, Expedited Shipping, and Rush Shipping.
+
+                                    International: We offer shipping to Canada, UK, and most other countries.
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+
+                                   <div class="card">
+                                    <div class="card-header" id="heading2">
+                                      <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse{{p.ordernumber}}">
+                                  How long will it take my order to process for shipment?
+                                        </a>
+                                      </h5>
+                                    </div>
+                                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                                      <div class="card-body">
+                                    All orders are subject to processing time that is separate and apart from the time it takes for a shipment to reach its destination once it has been picked up from our fulfillment center by the applicable carrier. Depending on a number of factors, standard domestic and international orders may take up to 4 business days (excluding Saturdays, Sundays, and Holidays) to process.
+
+                                    After your payment is authorized and verified, Standard orders can still take up to 4 business days, Expedited orders can still take up to 3 business days, and Rush orders can still take up to 1 business day to process. This is just an estimate and doesn't include weekends or holidays.
+                                      </div>
+                                    </div>
+                                  </div>
+
+
+
+
+
+
+                                   <div class="card">
+                                    <div class="card-header" id="heading3">
+                                      <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse{{p.ordernumber}}">
+                                        How long is your In-Transit Time to receive my package once my order has shipped?
+                                        </a>
+                                      </h5>
+                                    </div>
+                                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+                                      <div class="card-body">
+                                      In-Transit time starts when your order has been shipped, and does not include standard processing time applicable to the shipping method selected at the time of checkout. Business days do not include Saturdays, Sundays, or US Holidays. For information on anticipated delivery (inclusive of processing and transit times), please refer to our Shipping Policy or the Shipping chart above.
+
+                                    We are not responsible for applicable customs fees, import duties, taxes or any other charges.
+                                      </div>
+                                    </div>
+                                  </div>
+                                          
+                                    
+                    
+                                </div>
+                            </div>
+                            <!--Frequently Accordin End Here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+   {% endblock another_content %}
+
+
+
+
+                    {% block footer %}
+
+            {% include "footer.html" %}
+                
+            {% endblock footer %}

@@ -1,0 +1,11 @@
+
+  <div class="main">
+    <!-- Create a Form -->
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        Voulez-vous supprimer cet élément ?
+        <input type="submit" value="Oui" />
+        <a href="{% url 'productList' %}">Annuler </a>
+    </form>
+</div>

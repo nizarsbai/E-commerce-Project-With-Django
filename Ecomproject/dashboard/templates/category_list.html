@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Les catégories{% endblock  %}
+
+{% block content %}
+<div class="container">
+<a href="{% url 'categoryCreate' %}" class="btn btn-link">Nouvelle Catégorie</a>
+<br>
+<br>
+<table class="table table-hover" border="1">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Description</th>
+      <th scope="col">Opérations</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for category in categories %}
+    <tr>
+      <th scope="row">{{category.id}}</th>
+      <td>{{category.title}}</td>
+      <td>{{category.description}}</td>
+      <td>
+               <a href="{% url 'categoryUpdate' category.id %}">Editer</a><br>
+               <a href="{% url 'categoryDelete' category.id %}">supprimer</a>
+              
+       </td>
+    </tr>
+   {% endfor %} 
+  </tbody>
+</table>
+</div>
+{% endblock  %}

@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+            {% block title %}
+
+           About Us
+
+            {% endblock %}
+
+
+            
+
+
+            {% block header %}
+
+                {% include 'header.html' %}
+
+            {% endblock %}
+
+           
+
+{% block  another_content%} 
+
+ <!-- Begin Li's Breadcrumb Area -->
+            <div class="breadcrumb-area">
+                <div class="container">
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li class="active">About Us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Li's Breadcrumb Area End Here -->
+            <!-- about wrapper start -->
+            <div class="about-us-wrapper pt-60 pb-40">
+                <div class="container">
+                    <div class="row">
+                        <!-- About Text Start -->
+                        <div class="col-lg-6 order-last order-lg-first">
+                            <div class="about-text-wrap">
+                                <h1>LIMUPA</h1>
+                                <br><br>
+                                <h2>Provide Best Product For You</h2><br><br>
+                                <span>Hello and welcome to LIMUPA, the place to find the best Products for every taste and occasion. We thoroughly check the quality of our goods, working only with reliable suppliers so that you only receive the best quality product.
+
+                                We at LIMUPA believe in high quality and exceptional customer service. But most importantly, we believe shopping is a right, not a luxury, so we strive to deliver the best products at the most affordable prices, and ship them to you regardless of where you are located.</span>
+                            </div>
+                        </div>
+                        <!-- About Text End -->
+                        <!-- About Image Start -->
+                        <div class="col-lg-5 col-md-10">
+                            <div class="about-image-wrap">
+                                <img class="img-full" src="{%static ''%}Ecom/images/menu/logo/2.jpg" alt="About Us" />
+                            </div>
+                        </div>
+                        <!-- About Image End -->
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+            {% block footer %}
+
+                {% include 'footer.html' %}
+
+            {% endblock %}

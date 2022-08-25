@@ -1,0 +1,92 @@
+{% load static %}
+<br>
+<!-- Begin Slider With Category Menu Area -->
+            <div class="slider-with-banner">
+                <div class="container">
+                    <div class="row">
+                        <!-- Begin Category Menu Area -->
+                        <div class="col-lg-3">
+                            <!--Category Menu Start-->
+                            <div class="category-menu">
+                                <div class="category-heading">
+                                    <h2 class="categories-toggle"><span>categories</span></h2>
+                                </div>
+                                <div id="cate-toggle" class="category-menu-list">
+                                    <ul>
+                                        {% for c in  category %}
+                                        <li><a href="{% url 'category_product' id=c.id  %}">{{c.title}}</a>
+                    
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--Category Menu End-->
+                        </div>
+                        <!-- Category Menu Area End Here -->
+                        <!-- Begin Slider Area -->
+                        <div class="col-lg-9">
+                            <div class="slider-area pt-sm-30 pt-xs-30">
+                                <div class="slider-active owl-carousel">
+                                    <!-- Begin Single Slide Area -->
+                                    <div class="single-slide align-center-left animation-style-02 bg-4">
+                                        <img src="{%static ''%}Ecom/images/blog-banner/3.jpg" alt=""> 
+                                        <div class="slider-progress"></div>
+                                        <div class="slider-content">
+                                            <h5>Sale Offer <span>-20% Off</span> This Week</h5>
+                                            <h2>Phantom 4 Pro+ Obsidien</h2>
+                                            <h3>Starting at <span>1750.00 DH</span></h3>
+                                            <div class="default-btn slide-btn">
+                                                <a class="links" href="{% url 'products'%}">Shop Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Slide Area End Here -->
+                                    <!-- Begin Single Slide Area -->
+                                    <div class="single-slide align-center-left animation-style-01 bg-5">
+                                        <img src="{%static ''%}Ecom/images/blog-banner/2.jpg" alt="">  
+                                        <div class="slider-progress"></div>
+                                        <div class="slider-content">
+                                            <h5>Sale Offer <span>Black Friday</span> This Week</h5>
+                                            <h2>Work Desk Microsoft Surface Studio </h2>
+                                            <h3>Starting at <span>1599.00 DH</span></h3>
+                                            <div class="default-btn slide-btn">
+                                                <a class="links" href="{% url 'products'%}">Shop Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Slide Area End Here -->
+                                    <!-- Begin Single Slide Area -->
+                                    <div class="single-slide align-center-left animation-style-02 bg-6">
+                                        <img src="{%static ''%}Ecom/images/blog-banner/1.jpg" alt="">                                        <div class="slider-progress"></div>
+                                        <div class="slider-content">
+                                            <h5>Sale Offer <span>-10% Off</span> This Week</h5>
+                                            <h2>Samsung S9 | S9+ </h2>
+                                            <h3>Starting at <span>970.00 DH</span></h3>
+                                            <div class="default-btn slide-btn">
+                                                <a class="links" href="{% url 'products'%}">Shop Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Slide Area End Here -->
+                                    <!-- Begin Single Slide Area -->
+                                    <div class="single-slide align-center-left animation-style-02 bg-6">
+                                        <img src="{%static ''%}Ecom/images/blog-banner/5.jpg" alt="">                                        <div class="slider-progress"></div>
+                                        <div class="slider-content">
+                                            <h5>Sale Offer <span>-10% Off</span> This Week</h5>
+                                            <h2>Phantom 4 Pro+ white</h2>
+                                            <h3>Starting at <span>1200.00 DH</span></h3>
+                                            <div class="default-btn slide-btn">
+                                                <a class="links" href="{% url 'products'%}">Shop Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Single Slide Area End Here -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slider Area End Here -->
+                    </div>
+                </div>
+            </div>
